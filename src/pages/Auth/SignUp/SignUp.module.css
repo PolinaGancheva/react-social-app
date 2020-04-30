@@ -1,0 +1,39 @@
+.container {
+  position: relative;
+  color: black;
+  height: 600px;
+  width: 500px;
+  margin: auto;
+  padding: 60px 60px;
+  background: url(https://i5.walmartimages.com/asr/040ab7ad-3619-431e-b594-54f4cad52887_1.f2d9f8014e8f07def82b73ee7a400f07.jpeg)
+    no-repeat center;
+}
+
+.container :first-child {
+  background-color: transparent;
+  border: none;
+}
+
+.container h3 {
+  font-size: larger;
+}
+
+label {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.button {
+  background-color: #4267b2;
+  color: #fff;
+  width: 90%;
+  padding: 1rem 2rem;
+  display: block;
+  height: 3rem;
+  border-radius: 2rem;
+  margin-top: 3rem;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  text-transform: uppercase;
+}

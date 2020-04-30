@@ -1,0 +1,54 @@
+.userDetails {
+  box-shadow: 0 0 30px #dadee5;
+  float: left;
+  width: 100%;
+  background: #f5f5f5;
+}
+.userDetails img {
+  width: 150px;
+  height: 150px;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.sideInfo {
+  margin-top: 2.5rem;
+}
+.sideInfo h5 {
+  color: gray;
+}
+
+.follow {
+  margin: auto;
+  border-top: 1px solid #ced5e0;
+  width: 100%;
+}
+.follow .followers,
+.following {
+  display: inline-block;
+  padding: 6px 10px 0;
+}
+
+.followers,
+.following {
+  width: 50%;
+  text-align: center;
+}
+
+.following {
+  border-left: 1px solid #ced5e0;
+}
+
+.follow .value {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.follow .label {
+  display: block;
+  font-size: 14px;
+  color: #8c98a8;
+}

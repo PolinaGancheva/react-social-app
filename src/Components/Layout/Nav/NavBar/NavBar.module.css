@@ -1,0 +1,17 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #4267b2;
+  height: 60px;
+  z-index: 1;
+}
+
+.header img {
+  margin-left: 1rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}

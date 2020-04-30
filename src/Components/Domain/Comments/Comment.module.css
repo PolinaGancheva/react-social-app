@@ -1,0 +1,100 @@
+.commentsContainer {
+  border-top: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.commentList > div:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+.commentContainer {
+  position: relative;
+  display: flex;
+}
+
+.commentContent {
+  border: 0;
+  border-radius: 4px;
+  background-color: rgb(250, 250, 250);
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+}
+
+.commentContent > div:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.commentThumbnail {
+  margin-right: 15px;
+}
+
+.commentAuthor {
+  color: cornflowerblue;
+}
+
+.commentMedia {
+  object-fit: contain;
+  height: 100%;
+  max-height: 200px;
+  border-radius: 10px;
+}
+
+.commentFooter {
+  display: flex;
+  padding: 0.25rem;
+  color: rgb(125, 125, 125);
+  font-size: 0.75rem;
+}
+
+.commentAction {
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.2rem;
+  box-sizing: border-box;
+  border: none;
+}
+
+.commentAction > svg {
+  font-size: 13px;
+  margin-right: 0.5rem;
+}
+
+.commentAction:focus {
+  outline: 0;
+}
+
+.commentActionPerformed {
+  color: rgb(32, 120, 244);
+}
+
+.commentFooterSeparator {
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+}
+
+.showMoreText:focus {
+  outline: 0;
+}
+
+.commentForm {
+  display: flex;
+  margin-top: 0.5rem;
+  width: 100%;
+  position: relative;
+}
+
+.commentFormContent {
+  width: 100%;
+}
+
+.commentFormExtraBtn {
+  position: absolute;
+  top: 0.375rem;
+  right: 0.375rem;
+}

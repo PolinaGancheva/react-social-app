@@ -1,0 +1,91 @@
+.postsListContainer {
+  padding-bottom: 3rem;
+}
+.postsListContainer > div {
+  background-color: whitesmoke;
+  margin: 2rem;
+  border: 1px solid #d0d1d5;
+  border-radius: 2px;
+}
+.postimg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-height: 500px;
+}
+.postContainer {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.headerContainer img {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  object-fit: fill;
+}
+
+.postContent {
+  font-size: 0.9rem;
+  color: rgb(68, 69, 128);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.postContent > h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.headerContainer {
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.postAuhthor {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 1rem;
+}
+
+.postAuhthor > a {
+  margin: 0;
+  text-decoration: none;
+  color: cornflowerblue;
+  font-size: 1.25rem;
+}
+
+.timestamps {
+  font-size: 0.9rem;
+  color: black;
+}
+
+.postAction {
+  height: 32px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 0;
+  width: 100%;
+  background-color: #dcdcdc;
+  border: 0;
+  border-radius: 4px;
+}
+
+.postAction > svg {
+  margin-right: 0.5rem;
+}
+
+.postAction:focus {
+  outline: 0;
+}
+
+.postActionPerformed {
+  color: rgb(32, 120, 244);
+}
