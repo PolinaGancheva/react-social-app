@@ -3,6 +3,7 @@
   width: 60px;
   height: 60px;
   border-radius: 30px;
+  padding: 0;
 }
 .smallThumbnail {
   object-fit: cover;
@@ -10,4 +11,5 @@
   height: 40px;
   cursor: pointer;
   border-radius: 50%;
+  padding: 0;
 }

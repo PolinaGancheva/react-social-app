@@ -35,7 +35,12 @@ const PostForm = () => {
       <TextArea
         value=""
         placeholder={`What's on your mind, ${user.username}`}
-        formControlStyles={{ width: '100%', marginBottom: 0 }}
+        formControlStyles={{
+          width: '100%',
+          marginBottom: 0,
+          paddingRight: '4rem',
+          marginLeft: '2rem',
+        }}
         style={{ cursor: 'pointer' }}
         resizable={false}
         rows={1}

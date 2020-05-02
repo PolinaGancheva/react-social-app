@@ -36,3 +36,17 @@ export const deletePost = async (id: number): Promise<SuccessResponse> => {
   const res = await axios.delete(`/posts/${id}`);
   return res.data;
 };
+
+export type DataTypes = {
+  title: string;
+  content: string;
+  mediaId: number;
+};
+
+export const editPost = async (
+  id: number,
+  data: DataTypes
+): Promise<SuccessResponse> => {
+  const res = await axios.patch(`/posts/${id}`, { data });
+  return res.data;
+};

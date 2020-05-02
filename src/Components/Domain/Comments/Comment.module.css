@@ -44,7 +44,6 @@
 
 .commentFooter {
   display: flex;
-  padding: 0.25rem;
   color: rgb(125, 125, 125);
   font-size: 0.75rem;
 }
@@ -91,6 +90,7 @@
 
 .commentFormContent {
   width: 100%;
+  margin-left: 0.5rem;
 }
 
 .commentFormExtraBtn {

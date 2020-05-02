@@ -16,10 +16,17 @@ const PostMenu = ({ posts }: Props) => {
     devcamp.deletePost,
     {
       onSuccess: () => {
-        removeFromCache(['posts', posts.id], posts.id);
-        updateInCache<PostModel>(['userPosts', posts.id], posts.id, (old) => ({
+        removeFromCache(['userPosts', posts.user?.id], posts.id);
+        updateInCache<PostModel>(['posts'], posts.id, (old) => ({
           ...old,
         }));
+        updateInCache<PostModel>(
+          ['userPosts', posts.user.id],
+          posts.id,
+          (old) => ({
+            ...old,
+          })
+        );
       },
     }
   );

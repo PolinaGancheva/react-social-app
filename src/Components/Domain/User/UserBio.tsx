@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classes from './User.module.css';
 import { UserDetailsModel, UserSummaryModel } from 'types';
 import Thumbnail from '../Thumbnail';
-import { ListGroup, ListGroupItem, Container, Row, Col } from 'react-bootstrap';
+import {
+  ListGroup,
+  ListGroupItem,
+  Container,
+  Row,
+  Col,
+  Media,
+} from 'react-bootstrap';
 import FollowButton from '../FollowButton';
 import { format, parseISO } from 'date-fns';
 import {
@@ -13,6 +20,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useAuth } from 'hooks/domain';
+import { UploadButton, UploadPreview } from '../Uploads';
+import { updateInCache, removeFromCache } from 'utils';
+import { UserBioModel } from '../../../types/models/UserBio';
+import { Me } from '../../../types/models/Me';
+import * as devcamp from 'api/devcamp';
+import { useMutation, queryCache } from 'react-query';
 
 type UserDetailsProps = {
   data: UserDetailsModel & UserSummaryModel;
@@ -27,6 +40,18 @@ const UserBio = ({ data }: UserDetailsProps) => {
         <Row>
           <Col>
             <Thumbnail mediaId={data.avatarId} />
+            {user?.id === data.id ? (
+              <UploadButton
+                onUploaded={async (media) => {
+                  await devcamp.updateImage(media.id);
+                  queryCache.refetchQueries(['me']);
+                  queryCache.refetchQueries(['user', user?.username!]);
+                  return media.id;
+                }}
+              />
+            ) : (
+              ''
+            )}
           </Col>
           <Col className={classes.sideInfo}>
             <Row>

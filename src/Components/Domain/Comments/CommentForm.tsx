@@ -60,7 +60,7 @@ const CommentForm = ({ post, onSuccess }: Props) => {
             <TextAreaField
               name="content"
               placeholder="Leave a comment"
-              formControlStyles={{ marginBottom: 0, flexGrow: 1 }}
+              formControlStyles={{ marginBottom: '5px', flexGrow: 1 }}
               isTouched={false}
               disabled={isSubmitting}
               onEnterPress={handleSubmit}
