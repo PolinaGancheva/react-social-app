@@ -1,9 +1,9 @@
 import React from 'react';
 import { PostModel } from 'types';
 import { NavLink } from 'react-router-dom';
+import { formatDistance, parseISO } from 'date-fns';
 import classes from './Post.module.css';
 import Avatar from '../../Generic/Avatar/Avatar';
-import { formatDistance, parseISO } from 'date-fns';
 import PostMenu from './PostMenu';
 
 type PostHeaderProps = {

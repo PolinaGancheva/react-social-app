@@ -1,9 +1,9 @@
 import React from 'react';
 import { PostModel } from 'types';
-import { useMutation } from 'react-query';
+import { useMutation, queryCache } from 'react-query';
 import { useAuth } from 'hooks/domain';
 import * as devcamp from 'api/devcamp';
-import { removeFromCache, updateInCache } from 'utils/cache';
+import { removeFromCache } from 'utils/cache';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 
 type Props = {
@@ -17,16 +17,8 @@ const PostMenu = ({ posts }: Props) => {
     {
       onSuccess: () => {
         removeFromCache(['userPosts', posts.user?.id], posts.id);
-        updateInCache<PostModel>(['posts'], posts.id, (old) => ({
-          ...old,
-        }));
-        updateInCache<PostModel>(
-          ['userPosts', posts.user.id],
-          posts.id,
-          (old) => ({
-            ...old,
-          })
-        );
+        queryCache.refetchQueries(['userPosts', posts.user.id]);
+        queryCache.refetchQueries('posts');
       },
     }
   );
@@ -52,6 +44,7 @@ const PostMenu = ({ posts }: Props) => {
             style={{
               width: '25px',
               height: '25px',
+              mixBlendMode: 'multiply',
             }}
           />
         }

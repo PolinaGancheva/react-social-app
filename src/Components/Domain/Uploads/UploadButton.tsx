@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as devcamp from 'api/devcamp';
 import { MediaModel } from 'types';
 import { useMutation } from 'react-query';
-import { useAuth } from 'hooks/domain';
 
 type Props = {
   disabled?: boolean;
@@ -13,7 +12,6 @@ type Props = {
 };
 const UploadButton = ({ disabled, onUploaded }: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const { user } = useAuth();
 
   const [uploadMedia, { status }] = useMutation(devcamp.uploadMedia, {
     onSuccess: (data) => {
@@ -28,11 +26,8 @@ const UploadButton = ({ disabled, onUploaded }: Props) => {
     if (!file) {
       return;
     }
-    const uploadedMedia = await devcamp.uploadMedia(file);
 
-    if (onUploaded) {
-      onUploaded(uploadedMedia);
-    }
+    uploadMedia(file);
   };
 
   const isLoading = status === 'loading';

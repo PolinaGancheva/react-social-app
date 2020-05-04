@@ -4,12 +4,12 @@ import classnames from 'classnames';
 import { Formik } from 'formik';
 import { useMutation } from 'react-query';
 import * as devcamp from 'api/devcamp';
-import { UploadButton, UploadPreview } from '../Uploads';
-import classes from './Comment.module.css';
 import { PostModel, CommentModel } from 'types';
 import { useHistory } from 'react-router';
 import { Button } from 'react-bootstrap';
 import { useAuth } from 'hooks/domain';
+import classes from './Comment.module.css';
+import { UploadButton, UploadPreview } from '../Uploads';
 import Thumbnail from '../Thumbnail';
 
 const initialValues = { content: '', mediaId: null };

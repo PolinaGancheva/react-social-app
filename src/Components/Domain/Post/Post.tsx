@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { PostModel } from 'types';
 import classes from './Post.module.css';
 import PostContent from './PostContent';
@@ -11,7 +11,7 @@ type PostProps = {
 };
 
 const Post = ({ data }: PostProps) => {
-  let shouldShowComments = true;
+  const [showComments, setShowComments] = useState(false);
   return (
     <div className={classes.postContainer}>
       <PostHeader posts={data} />
@@ -20,12 +20,17 @@ const Post = ({ data }: PostProps) => {
         content={data.content}
         mediaId={data.mediaId}
       />
-      <PostActions post={data} />
+      <PostActions
+        post={data}
+        onShowComments={() => {
+          setShowComments(!showComments);
+        }}
+      />
       <PostComments
         post={data}
-        shouldShowComments={shouldShowComments}
+        shouldShowComments={showComments}
         onShowComments={() => {
-          shouldShowComments = !shouldShowComments;
+          setShowComments(!showComments);
         }}
       />
     </div>

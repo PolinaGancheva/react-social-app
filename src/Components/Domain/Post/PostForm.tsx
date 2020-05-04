@@ -3,10 +3,10 @@ import { Avatar, TextAreaField, TextArea } from 'Components/Generic';
 import { Modal, Button } from 'react-bootstrap';
 import { Formik } from 'formik';
 import { useAuth } from 'hooks/domain';
-import classes from './PostForm.module.css';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useMutation, queryCache } from 'react-query';
 import * as devcamp from 'api/devcamp';
+import classes from './PostForm.module.css';
 import { UploadPreview, UploadButton } from '../Uploads';
 
 type FormValues = {
@@ -34,7 +34,7 @@ const PostForm = () => {
     <>
       <TextArea
         value=""
-        placeholder={`What's on your mind, ${user.username}`}
+        placeholder={`What's on your mind, ${user.name}`}
         formControlStyles={{
           width: '100%',
           marginBottom: 0,
@@ -70,12 +70,12 @@ const PostForm = () => {
               <Modal.Body>
                 <div className={classes.formHeader}>
                   <Avatar avatarId={user.avatarId} />
-                  <NavLink
+                  <Link
                     to={`/${user.username}`}
                     style={{ textDecoration: 'none' }}
                   >
                     {user.name}{' '}
-                  </NavLink>
+                  </Link>
                 </div>
                 <div>
                   <TextAreaField

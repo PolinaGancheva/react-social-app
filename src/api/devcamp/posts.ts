@@ -16,7 +16,7 @@ export const getFollowingPosts = async (
   cursor: number | null,
   limit: number = 10
 ): Promise<CursorResponse<PostModel>> => {
-  const res = await axios.get(`v1/posts`, {
+  const res = await axios.get('v1/posts', {
     params: { cursor, limit },
   });
   return res.data;
@@ -28,7 +28,7 @@ type CreatePostData = {
 };
 
 export const createPost = async (data: CreatePostData): Promise<PostModel> => {
-  const res = await axios.post(`/posts`, data);
+  const res = await axios.post('/posts', data);
   return res.data;
 };
 

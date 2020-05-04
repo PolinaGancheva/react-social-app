@@ -1,16 +1,6 @@
-import React, { useState } from 'react';
-import classes from './User.module.css';
+import React from 'react';
 import { UserDetailsModel, UserSummaryModel } from 'types';
-import Thumbnail from '../Thumbnail';
-import {
-  ListGroup,
-  ListGroupItem,
-  Container,
-  Row,
-  Col,
-  Media,
-} from 'react-bootstrap';
-import FollowButton from '../FollowButton';
+import { ListGroup, ListGroupItem, Container, Row, Col } from 'react-bootstrap';
 import { format, parseISO } from 'date-fns';
 import {
   faBirthdayCake,
@@ -20,12 +10,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useAuth } from 'hooks/domain';
-import { UploadButton, UploadPreview } from '../Uploads';
-import { updateInCache, removeFromCache } from 'utils';
-import { UserBioModel } from '../../../types/models/UserBio';
-import { Me } from '../../../types/models/Me';
 import * as devcamp from 'api/devcamp';
-import { useMutation, queryCache } from 'react-query';
+import { queryCache } from 'react-query';
+import { UploadButton } from '../Uploads';
+import FollowButton from '../FollowButton';
+import Thumbnail from '../Thumbnail';
+import classes from './User.module.css';
 
 type UserDetailsProps = {
   data: UserDetailsModel & UserSummaryModel;
